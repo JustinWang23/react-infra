@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, '../dist'),
@@ -15,6 +15,18 @@ module.exports = {
     contentBase: './dist',
     hot: true,
     compress: true,
+    historyApiFallback: true,
   },
-  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin({ title: 'React-Infra' })],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin({ template: 'index.html' })],
 };
