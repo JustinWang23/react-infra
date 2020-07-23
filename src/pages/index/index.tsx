@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import svg from '../../assets/default.svg';
 
-import './index.scss';
+import styles from './index.scss';
 
 const Index = (): JSX.Element => {
   const [count, setCount] = useState(0);
@@ -12,7 +12,7 @@ const Index = (): JSX.Element => {
   }
 
   return (
-    <div className='wrap'>
+    <div className={styles.wrap}>
       <button onClick={changeCount(1)}>+</button>
       <button onClick={changeCount(-1)}>-</button>
       count: { count }

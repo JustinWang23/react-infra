@@ -6,6 +6,6 @@ import ReactDOM from 'react-dom';
 
 import Index from './pages/index';
 
-const App = () => <Index />
+const App = () => <Index />;
 
 ReactDOM.render(<App />, document.querySelector('#root'));
