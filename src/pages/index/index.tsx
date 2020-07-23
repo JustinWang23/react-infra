@@ -4,15 +4,15 @@ import svg from '../../assets/default.svg';
 
 import './index.scss';
 
-const Index = () => {
+const Index = (): JSX.Element => {
   const [count, setCount] = useState(0);
 
-  const changeCount = (step) => () => {
+  const changeCount = (step: number) => () => {
     setCount(count + step);
   }
 
   return (
-    <div class='wrap'>
+    <div className='wrap'>
       <button onClick={changeCount(1)}>+</button>
       <button onClick={changeCount(-1)}>-</button>
       count: { count }
