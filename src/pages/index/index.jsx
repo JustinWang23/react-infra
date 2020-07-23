@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import svg from '../../assets/default.svg';
+
 import './index.scss';
 
 const Index = () => {
@@ -14,6 +16,7 @@ const Index = () => {
       <button onClick={changeCount(1)}>+</button>
       <button onClick={changeCount(-1)}>-</button>
       count: { count }
+      <img src={svg} />
     </div>
   )
 };
