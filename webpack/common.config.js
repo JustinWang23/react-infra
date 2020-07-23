@@ -34,7 +34,15 @@ module.exports = {
               modules: {
                 localIdentName: '[name]__[local]--[hash:base64:5]',
               },
+              importLoaders: 1,
             },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [require('autoprefixer')]
+            }
           },
           'sass-loader',
         ],
