@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import 'index.scss';
+import './index.scss';
 
-export default Index = () => {
+const Index = () => {
   const [count, setCount] = useState(0);
 
   const changeCount = (step) => () => {
@@ -10,10 +10,12 @@ export default Index = () => {
   }
 
   return (
-    <>
+    <div class='wrap'>
       <button onClick={changeCount(1)}>+</button>
-      <button onClick={changeCount(1)}>-</button>
+      <button onClick={changeCount(-1)}>-</button>
       count: { count }
-    </>
+    </div>
   )
 };
+
+export default Index;
