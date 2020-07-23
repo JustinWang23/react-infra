@@ -2,7 +2,7 @@
   "name": "react-infra",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.jsx",
+  "main": "./src/app.jsx",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack/common.config.js --progress",
     "build": "webpack --config webpack/common.config.js",
