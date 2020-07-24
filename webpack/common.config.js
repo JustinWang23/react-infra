@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/app.tsx',
@@ -9,6 +10,10 @@ module.exports = {
       template: './src/index.html',
       favicon: './favicon.svg',
     }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[id].[contenthash].css',
+    }),
   ],
   module: {
     rules: [
@@ -16,6 +21,29 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.(c|sa|sc)ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [require('autoprefixer')],
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

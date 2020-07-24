@@ -22,29 +22,4 @@ module.exports = merge(commonConfig, {
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.(c|sa|sc)ss$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [require('autoprefixer')],
-            },
-          },
-          'sass-loader',
-        ],
-      },
-    ],
-  },
 });
