@@ -6,7 +6,9 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
         "standard",
         "prettier"
     ],
@@ -23,7 +25,6 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "@typescript-eslint"
     ],
     "rules": {

@@ -16,7 +16,7 @@ const Index = (): JSX.Element => {
       <button onClick={changeCount(1)}>+</button>
       <button onClick={changeCount(-1)}>-</button>
       count: {count}
-      <img src={svg} />
+      <img src={svg} alt="pic" />
     </div>
   );
 };
