@@ -5,7 +5,10 @@ module.exports = {
   entry: './src/app.tsx',
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      favicon: './favicon.svg',
+    }),
   ],
   module: {
     rules: [
