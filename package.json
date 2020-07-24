@@ -46,18 +46,5 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.6"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ]
-  },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "not dead",
-    "IE 10"
-  ]
+  }
 }
