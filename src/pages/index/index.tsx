@@ -15,7 +15,7 @@ const Index = (): JSX.Element => {
     <div className={styles.wrap}>
       <button onClick={changeCount(1)}>+</button>
       <button onClick={changeCount(-1)}>-</button>
-      count: {count}
+      count: <span data-testid="count">{count}</span>
       <img src={svg} alt="pic" />
     </div>
   );
